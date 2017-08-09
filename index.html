@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Does you want c00kie cr!spz? BLACK!~DIAMONDS</title>
+</head>
+<body ng-controller="controller">
+    Make sure to refresh after modifying an item<br>
+    <button ng-click="data()">Get/Refresh items in database</button><br>
+
+    <input type="text" placeholder="Item Name" ng-model="name">
+    <input type="text" placeholder="Description" ng-model="description">
+    <input type="text" placeholder="Price" ng-model="price">
+    <input type="text" placeholder="Image URL" ng-model="img">
+    <button ng-click="add(name,description,price,img)">Add Item</button><br>
+
+    <input type="text" placeholder="id" ng-model="id">
+    <input type="text" placeholder="Description" ng-model="desc">
+    <button ng-click="update(id,desc)">Change Description</button><br>
+    
+    <input type="text" placeholder="ID" ng-model="id2"><button ng-click="delete(id2)">Delete by ID</button>
+    <div ng-repeat="items in displayMahBrownies">
+    ID: {{items.productid}}<br>
+    Product: {{items.name}}<br>
+    Description: {{items.description}}<br>
+    Price: ${{items.price}}<br>
+    <img ng-src="{{items.imageurl}}">
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="./angular/app.js"></script>
+<script src="./angular/service.js"></script>
+<script src="./angular/controller.js"></script>
+</html>
